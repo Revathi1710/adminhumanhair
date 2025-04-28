@@ -46,6 +46,12 @@ import UpdateSubCategory from './SuperAdmin/UpdateSubcategory';
 import UpdateCategorySuperAdmin from './SuperAdmin/UpdateCategory';
 import AllProductSuperAdmin from './SuperAdmin/AllProduct';
 import AddvendorBulk from './SuperAdmin/AddvendorBulk';
+import AllTowerBanner from './SuperAdmin/AllTowerBanner';
+import AddTowerbanner from './SuperAdmin/AddTowerBanner';
+import UpdateTowerBanner from './SuperAdmin/UpdatetowerBanner';
+ import AddHorizontalbanner from './SuperAdmin/addHorizontalbanner';
+ import UpdateHorizontalTowerBanner from './SuperAdmin/UpdateHorizontalbanner';
+ import AllHorizontalBanner from './SuperAdmin/AllHorizontalbanner';
 
 import VendorLogin from './Vendors/VendorLogin';
 import VendorSignup from './Vendors/VendorSignup';
@@ -156,7 +162,7 @@ function App() {
           
           <Route path="/SuperAdmin/VendorBusiness/:id" element={< VendorBusiness/>} />
           <Route path="/SuperAdmin/AdminDashboard" element={< AdminDashboard />} />
-
+          
           <Route path="/SuperAdmin/UpdateCategory/:id" element={< UpdateCategorySuperAdmin/>} />
           <Route path="/SuperAdmin/AllProduct" element={< AllProductSuperAdmin />} />
           <Route path="/SuperAdmin/AllSubcategory" element={< AllSubcategory />} />
@@ -164,8 +170,12 @@ function App() {
           <Route path="/SuperAdmin/AllEnquiry" element={<  AllEnquiryAdmin />} />
           <Route path="/SuperAdmin/AddCustomer" element={<  AddCustomer />} />
           
-          
-          
+          <Route path="/SuperAdmin/AddTowerbanner" element={< AddTowerbanner  />} />
+          <Route path="/SuperAdmin/AllTowerBanner" element={< AllTowerBanner />} />
+          <Route path="/SuperAdmin/UpdatetowerBanner/:id" element={< UpdateTowerBanner/>} />
+          <Route path="/SuperAdmin/AddHorizontalbanner" element={< AddHorizontalbanner  />} />
+          <Route path="/SuperAdmin/AllHorizontalBanner" element={< AllHorizontalBanner />} />
+          <Route path="/SuperAdmin/UpdateHorizontalTowerBanner/:id" element={< UpdateHorizontalTowerBanner/>} />
           <Route path="/Vendor/Login" element={< VendorLogin />} />
           <Route path="/Vendor/Signup" element={< VendorSignup />} />
           <Route path="/ForgetPassword" element={< ForgetPassword />} />

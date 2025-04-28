@@ -118,6 +118,12 @@ const Sidebar = () => {
               <li className={location.pathname === "/SuperAdmin/AllBanner" ? "active-menu" : ""}>
                 <Link to="/SuperAdmin/AllBanner">All Banner</Link>
               </li>
+              <li className={location.pathname === "/SuperAdmin/AllBanner" ? "active-menu" : ""}>
+                <Link to="/SuperAdmin/AllTowerBanner">All Tower banner</Link>
+                </li>
+                <li className={location.pathname === "/SuperAdmin/AllHorizontalbanner" ? "active-menu" : ""}>
+                <Link to="/SuperAdmin/AllHorizontalbanner">All Horizontal banner</Link>
+              </li>
             </ul>
           </li>
         </ul>
