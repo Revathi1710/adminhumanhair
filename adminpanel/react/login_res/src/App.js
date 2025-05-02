@@ -54,6 +54,10 @@ import UpdateTowerBanner from './SuperAdmin/UpdatetowerBanner';
  import AllHorizontalBanner from './SuperAdmin/AllHorizontalbanner';
  import BusinessSetting from './SuperAdmin/BusinessSetting';
  import AllBuilder from './SuperAdmin/AllBuilder';
+ import ViewBuilderEnquiry from './SuperAdmin/ViewBuilderEnquiry';
+ import AllBuyerDetails from './SuperAdmin/AllBuyerDetails';
+ import  ViewBuyerEnquiry from './SuperAdmin/ViewBuyerSentEnquiry';
+
 
 import VendorLogin from './Vendors/VendorLogin';
 import VendorSignup from './Vendors/VendorSignup';
@@ -160,7 +164,7 @@ function App() {
           <Route path="/SuperAdmin/AddSubCategoryAdmin" element={< AddSubCategoryAdmin/>} />
           <Route path='/UpdatesubCategory/:id' element={<UpdateSubCategory/>} />
           <Route path='/UpdateBuyer/:id' element={<UpdateBuyer/>} />
-          
+        
           <Route path="/SuperAdmin/ViewVendor/:id" element={< ViewVendor/>} />
           
           <Route path="/SuperAdmin/VendorBusiness/:id" element={< VendorBusiness/>} />
@@ -174,7 +178,10 @@ function App() {
           <Route path="/SuperAdmin/AddCustomer" element={<  AddCustomer />} />
           <Route path="/SuperAdmin/BusinessSetting" element={< BusinessSetting />} />
           <Route path="/SuperAdmin/AllBuilder" element={< AllBuilder />} />
+          <Route path="/SuperAdmin/AllBuyerDetails" element={< AllBuyerDetails />} />
           
+          <Route path="/SuperAdmin/ViewBuilderEnquiry/:id" element={< ViewBuilderEnquiry />} />
+          <Route path="/SuperAdmin/ViewBuyerEnquiry/:id" element={<ViewBuyerEnquiry />} />
           
           
           <Route path="/SuperAdmin/AddTowerbanner" element={< AddTowerbanner  />} />

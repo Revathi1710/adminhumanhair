@@ -128,3 +128,8 @@ color: #006097;
   border-color: #970000; 
    
   }
+  .pagination{
+    right: 30px;
+    position: fixed;
+    bottom: 50px;
+  }

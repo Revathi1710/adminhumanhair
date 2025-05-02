@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import axios from 'axios';
 
-function ViewBuilderEnquiry() {
+function ViewBuyerEnquiry() {
   const { id } = useParams();
   const [enquiries, setEnquiries] = useState([]);
   const [message, setMessage] = useState('');
@@ -14,7 +14,7 @@ function ViewBuilderEnquiry() {
     const fetchEnquiries = async () => {
       try {
         console.log("Vendor ID from URL:", id); // Debug log
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/getEnquiriesByVendor/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/getSentEnquiriesByBuyer/${id}`);
         console.log("API Response:", response.data); // Debug log
         if (response.data.status === 'ok') {
           setEnquiries(response.data.data);
@@ -47,7 +47,7 @@ function ViewBuilderEnquiry() {
       <Sidebar />
       <div className="add-category-container">
         <div className="title">
-          <h2 className="mb-4">All Enquiries</h2>
+          <h2 className="mb-4">Sent Enquiries</h2>
         </div>
         <div className="mb-3">
           {message && <p className="text-danger">{message}</p>}
@@ -58,8 +58,7 @@ function ViewBuilderEnquiry() {
                   <tr>
                     <th>SI.No</th>
                     <th>Date/Time</th>
-                    <th>Customer Name</th>
-                    <th>Customer Number</th>
+                   
                     <th>Builder Name</th>
                     <th>Builder Number</th>
                   </tr>
@@ -69,8 +68,7 @@ function ViewBuilderEnquiry() {
                     <tr key={enquiry._id}>
                       <td>{startIndex + index + 1}</td>
                       <td>{new Date(enquiry.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</td>
-                      <td>{enquiry.customername}</td>
-                      <td>{enquiry.customerIdNumber}</td>
+                     
                       <td>{enquiry.ownerName || 'No Vendor'}</td>
                       <td>{enquiry.ownerNumber || 'No Vendor'}</td>
                     </tr>
@@ -98,4 +96,4 @@ function ViewBuilderEnquiry() {
   );
 }
 
-export default ViewBuilderEnquiry;
+export default ViewBuyerEnquiry;

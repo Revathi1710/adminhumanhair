@@ -89,7 +89,7 @@ const Sidebar = () => {
             </a>
             <ul style={{ display: activeSubMenu === 6 ? 'block' : 'none' }}>
               <li className={location.pathname === "/SuperAdmin/AllBuyer" ? "active-menu" : ""}>
-                <Link to="/SuperAdmin/AllUser">All Buyer</Link>
+                <Link to="/SuperAdmin/AllBuyerDetails">All Buyer</Link>
               </li>
               <li className={location.pathname === "/SuperAdmin/AddBuyer" ? "active-menu" : ""}>
                 <Link to="/SuperAdmin/AddBuyer">Add Buyer</Link>

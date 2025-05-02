@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import "../Vendors/table.css";
 
-const AllBuilder = () => {
+const AllBuyerDetails = () => {
   const [vendors, setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [expandedRows, setExpandedRows] = useState({});
@@ -11,7 +11,7 @@ const AllBuilder = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allBuilder`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allBuilderBuyer`);
         const data = response.data;
         if (data.status === 'ok') {
           setUsers(data.data);
@@ -26,7 +26,7 @@ const AllBuilder = () => {
   }, []);
 
   const handleView = (VendorId) => {
-    window.location.href = `/SuperAdmin/ViewBuilderEnquiry/${VendorId}`;
+    window.location.href = `/SuperAdmin/ViewBuyerEnquiry/${VendorId}`;
   };
 
   const handleApproved = async (id, newStatus) => {
@@ -113,4 +113,4 @@ const AllBuilder = () => {
   );
 };
 
-export default AllBuilder;
+export default AllBuyerDetails;
