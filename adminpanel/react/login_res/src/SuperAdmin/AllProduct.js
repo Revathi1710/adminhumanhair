@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './sidebar'; // Ensure the correct path
+import Sidebar from './Sidebar'; // Ensure the correct path
 import './addcategory.css'; // Check path
 import '../Vendors/table.css'; // Check path
 import axios from 'axios';
@@ -10,7 +10,7 @@ const Allproducts = () => {
   const [expandedRows, setExpandedRows] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/getProduct`, {
+    fetch(`${process.env.REACT_APP_API_URL}/getProperty`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const Allproducts = () => {
   const handleUpdateFeature = async (id, currentStatus) => {
     try {
       const updatedStatus = !currentStatus; // Toggle the current feature status
-      const response = await axios.put(`${process.env.REACT_APP_API_URL}/updateFeatureProduct/${id}`, { feature: updatedStatus });
+      const response = await axios.put(`${process.env.REACT_APP_API_URL}/updateFeatureProperty/${id}`, { feature: updatedStatus });
       const data = response.data;
 
       if (data.status === 'ok') {
@@ -95,7 +95,7 @@ const Allproducts = () => {
 
   const handleDelete = (productId) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
-      fetch(`${process.env.REACT_APP_API_URL}/deleteProductVendor`, {
+      fetch(`${process.env.REACT_APP_API_URL}/deleteProperty`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -138,6 +138,7 @@ const Allproducts = () => {
             <thead className="table-dark">
               <tr>
               <th>SI.No</th>
+            
                 <th>Image</th>
                 <th>Name</th>
                 <th>Status</th>
@@ -150,25 +151,27 @@ const Allproducts = () => {
               {products.map((product, index) => (
                 <tr key={product._id}>
                    <td>
-                    <i 
+                 {/*  <i 
                       className={expandedRows[product._id] ? 'far fa-minus-square' : 'far fa-plus-square'}
                       style={{ cursor: "pointer", marginRight: "8px" }}
                       onClick={() => toggleRow(product._id)}
-                    ></i>
+                    ></i>*/}
                     {index + 1}
                   </td>
+               
                   <td>
-                    {product.image ? (
-                      <img
-                        src={`${process.env.REACT_APP_API_URL}/${product.image.replace('\\', '/')}`}
-                        alt={product.name}
-                        style={{ width: '50px', height: '50px' }}
-                      />
-                    ) : (
-                      <span>No Image</span>
-                    )}
+                 {product.PropertyImages && product.PropertyImages.length > 0 ? (
+  <img
+    src={`${process.env.REACT_APP_API_URL}/${product.PropertyImages[0].replace('\\', '/')}`}
+    alt={product.name}
+    style={{ width: '50px', height: '50px' }}
+  />
+) : (
+  <span>No Image</span>
+)}
+
                   </td>
-                  <td>{product.slug}</td>
+                  <td>{product.bedrooms} BNK,{product.bathrooms} BNK  {product.kindofPropertyDetails}</td>
                   <td>
                     <div className="form-check form-switch">
                       <input 

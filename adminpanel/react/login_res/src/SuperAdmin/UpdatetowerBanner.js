@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import './addcategory.css';
 
 const UpdateTowerBanner = () => {

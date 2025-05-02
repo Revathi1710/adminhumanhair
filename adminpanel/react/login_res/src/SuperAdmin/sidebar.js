@@ -72,14 +72,14 @@ const Sidebar = () => {
 
           <li className={`sub-menu ${activeSubMenu === 1 ? 'active' : ''}`}>
             <a href="javascript:void(0);" onClick={() => setActiveSubMenu(activeSubMenu === 1 ? null : 1)}>
-              <i className="fas fa-user-alt"></i><span>Seller</span><i className="arrow fa fa-angle-right pull-right"></i>
+              <i className="fas fa-user-alt"></i><span>Builder</span><i className="arrow fa fa-angle-right pull-right"></i>
             </a>
             <ul style={{ display: activeSubMenu === 1 ? 'block' : 'none' }}>
-              <li className={location.pathname === "/SuperAdmin/AllCustomer" ? "active-menu" : ""}>
-                <Link to="/SuperAdmin/AllCustomer">All Seller</Link>
+              <li className={location.pathname === "/SuperAdmin/AllBuilder" ? "active-menu" : ""}>
+                <Link to="/SuperAdmin/AllBuilder">All Builder</Link>
               </li>
               <li className={location.pathname === "/SuperAdmin/AddCustomer" ? "active-menu" : ""}>
-                <Link to="/SuperAdmin/AddCustomer">Add Seller</Link>
+                <Link to="/SuperAdmin/AddCustomer">Add  Builder</Link>
               </li>
             </ul>
           </li>
@@ -106,7 +106,10 @@ const Sidebar = () => {
               </li>
             </ul>
           </li>
-
+          <li>
+            <Link to="/SuperAdmin/BusinessSetting"><i className="fa fa-dashboard"></i><span>Business Setting</span></Link>
+          </li>
+                   
           <li className={`sub-menu ${activeSubMenu === 3 ? 'active' : ''}`}>
             <a href="javascript:void(0);" onClick={() => setActiveSubMenu(activeSubMenu === 3 ? null : 3)}>
               <i className="fa fa-cogs"></i><span>Homepage Setting</span><i className="arrow fa fa-angle-right pull-right"></i>

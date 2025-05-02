@@ -19,7 +19,7 @@ import './Vendors/vendorsidebar.css';
 import './Vendors/login.css';
 import './Vendors/table.css';
 import SuperAdmin from './SuperAdmin/Login';
-import Sidebar from './SuperAdmin/sidebar';  // Corrected path
+import Sidebar from './SuperAdmin/Sidebar';  // Corrected path
 import AddCategory from './SuperAdmin/AddCategory';
 import AllCategory from './SuperAdmin/AllCategory';
 import AllUser from './SuperAdmin/Alluser';
@@ -52,6 +52,8 @@ import UpdateTowerBanner from './SuperAdmin/UpdatetowerBanner';
  import AddHorizontalbanner from './SuperAdmin/addHorizontalbanner';
  import UpdateHorizontalTowerBanner from './SuperAdmin/UpdateHorizontalbanner';
  import AllHorizontalBanner from './SuperAdmin/AllHorizontalbanner';
+ import BusinessSetting from './SuperAdmin/BusinessSetting';
+ import AllBuilder from './SuperAdmin/AllBuilder';
 
 import VendorLogin from './Vendors/VendorLogin';
 import VendorSignup from './Vendors/VendorSignup';
@@ -106,6 +108,7 @@ import ServiceView from './components/ServiceView';
 import  VendorWebsite from './Vendors/Index';
 import LeadForm from './components/leadForm';
 import AccountNotApproved from './Vendors/notApproved';
+
 
 function App() {
   const isLoggedIn = window.localStorage.getItem('loggedIn');
@@ -169,6 +172,10 @@ function App() {
           <Route path="/SuperAdmin/AddvendorBulk" element={<  AddvendorBulk />} />
           <Route path="/SuperAdmin/AllEnquiry" element={<  AllEnquiryAdmin />} />
           <Route path="/SuperAdmin/AddCustomer" element={<  AddCustomer />} />
+          <Route path="/SuperAdmin/BusinessSetting" element={< BusinessSetting />} />
+          <Route path="/SuperAdmin/AllBuilder" element={< AllBuilder />} />
+          
+          
           
           <Route path="/SuperAdmin/AddTowerbanner" element={< AddTowerbanner  />} />
           <Route path="/SuperAdmin/AllTowerBanner" element={< AllTowerBanner />} />

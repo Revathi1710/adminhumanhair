@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate  } from 'react-router-dom';
 
-import Sidebar from './sidebar'; // Ensure the correct path
+import Sidebar from './Sidebar'; // Ensure the correct path
 import './addcategory.css';
 import '../Vendors/table.css';
 

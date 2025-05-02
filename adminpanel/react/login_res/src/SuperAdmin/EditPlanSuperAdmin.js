@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import './addcategory.css'; // Import a CSS file for styling
 import { useParams } from 'react-router-dom'; // For accessing URL parameters
 

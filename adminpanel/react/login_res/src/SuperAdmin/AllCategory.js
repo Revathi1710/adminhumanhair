@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
-import Sidebar from './sidebar'; 
+import Sidebar from './Sidebar'; 
 import axios from 'axios';
 import '../Vendors/table.css';
 import { Link, useNavigate } from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is imported
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import './addcategory.css';
 import {  useNavigate } from 'react-router-dom';
 const AddsubCategory = () => {

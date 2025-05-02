@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Sidebar from './sidebar';
+import Sidebar from './Sidebar';
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);

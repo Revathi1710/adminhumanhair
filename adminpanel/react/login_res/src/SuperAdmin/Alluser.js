@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import axios from 'axios';
 import '../Vendors/table.css';
 import { Link, useNavigate } from 'react-router-dom';

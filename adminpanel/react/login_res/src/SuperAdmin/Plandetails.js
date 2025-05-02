@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './sidebar';
+import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../Vendors/plan.css';

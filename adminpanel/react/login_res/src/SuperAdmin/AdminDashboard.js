@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import './addcategory.css';
 import '../Vendors/dashboard.css';
 import AcceptRejectGraph from "./acceptRejectGraph";

@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import "../Vendors/table.css";
 
-const Alluser = () => {
+const AllBuilder = () => {
   const [vendors, setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [expandedRows, setExpandedRows] = useState({});
@@ -11,7 +11,7 @@ const Alluser = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allVendor`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/allBuilder`);
         const data = response.data;
         if (data.status === 'ok') {
           setUsers(data.data);
@@ -61,7 +61,7 @@ const Alluser = () => {
     <Sidebar />
     <div className="add-category-container">
         <div className="title">
-        <h2 className='mb-4'>All Sellers</h2>
+        <h2 className='mb-4'>All Builder</h2>
         </div>
         {message && <p>{message}</p>}
         {vendors.length > 0 ? (
@@ -71,32 +71,25 @@ const Alluser = () => {
                 <th>SI.No</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Company Name</th>
+               
                 <th>Number</th>
                 <th>Date Added</th>
-                <th>Approved </th>
-               <th>Actions</th>
+               <th>View</th>
               </tr>
             </thead>
             <tbody>
               {vendors.map((vendor, index) => (
                 <tr key={vendor._id}>
                   <td>
-                    <i 
-                      className={expandedRows[vendor._id] ? 'far fa-minus-square' : 'far fa-plus-square'}
-                      style={{ cursor: "pointer", marginRight: "8px" }}
-                      onClick={() => toggleRow(vendor._id)}
-                    ></i>
+                   
                     {index + 1}
                   </td>
                   <td>{vendor.fname}</td>
                   <td>{vendor.email}</td>
-                  <td>{vendor.businessName}</td>
+                  
                   <td>{vendor.number}</td>
                   <td>{new Date(vendor.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
-                  <td> <span className={`badge ${vendor.approved ? 'bg-success' : 'bg-danger'}`}>
-                      {vendor.approved ? 'Approved' : 'Reject'}
-                    </span></td>
+                 
                 
                   
                   <td>
@@ -106,24 +99,7 @@ const Alluser = () => {
                     >
                       View
                     </button>
-                    {expandedRows[vendor._id] && (
-                      <div className='d-flex'>
-                        <button
-                          className={`btn ${vendor.approved ? 'btn-success' : 'btn-secondary'} me-2`}
-                          onClick={() => handleApproved(vendor._id, true)}
-                          disabled={vendor.approved === true}
-                        >
-                          Approved
-                        </button>
-                        <button
-                          className={`btn ${vendor.approved === false ? 'btn-danger' : 'btn-secondary'}`}
-                          onClick={() => handleApproved(vendor._id, false)}
-                          disabled={vendor.approved === false}
-                        >
-                          Reject
-                        </button>
-                      </div>
-                    )}
+                 
                   </td>
                 </tr>
               ))}
@@ -137,4 +113,4 @@ const Alluser = () => {
   );
 };
 
-export default Alluser;
+export default AllBuilder;

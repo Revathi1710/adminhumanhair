@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from './sidebar'; // Adjust the path according to your directory structure
+import Sidebar from './Sidebar'; // Adjust the path according to your directory structure
 import './addcategory.css';
 
 const AddHorizontalbanner = () => {

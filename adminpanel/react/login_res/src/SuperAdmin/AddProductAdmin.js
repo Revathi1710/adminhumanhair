@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Sidebar from './sidebar'; // Adjust import to your file structure
+import Sidebar from './Sidebar'; // Adjust import to your file structure
 import '../SuperAdmin/addcategory.css';
 
 const AddProduct = () => {

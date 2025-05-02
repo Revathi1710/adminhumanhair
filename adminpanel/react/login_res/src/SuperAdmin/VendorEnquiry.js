@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import '../SuperAdmin/addcategory.css';
 import '../Vendors/sidebar2.css';
-import Sidebar from './sidebar';
+import Sidebar from './Sidebar';
 import '../Vendors/businessProfile.css';
 import './Vendorview.css';
 import '../Vendors/table.css';
