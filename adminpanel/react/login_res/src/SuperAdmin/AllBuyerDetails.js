@@ -61,7 +61,7 @@ const AllBuyerDetails = () => {
     <Sidebar />
     <div className="add-category-container">
         <div className="title">
-        <h2 className='mb-4'>All Builder</h2>
+        <h2 className='mb-4'>All Buyer</h2>
         </div>
         {message && <p>{message}</p>}
         {vendors.length > 0 ? (

@@ -47,12 +47,7 @@ const Sidebar = () => {
               <li className={location.pathname === "/SuperAdmin/AddCategory" ? "active-menu" : ""}>
                 <Link to="/SuperAdmin/AddCategory">Add Category</Link>
               </li>
-              <li className={location.pathname === "/SuperAdmin/AllSubCategory" ? "active-menu" : ""}>
-                <Link to="/SuperAdmin/AllSubCategory">All Subcategories</Link>
-              </li>
-              <li className={location.pathname === "/SuperAdmin/AddSubCategoryAdmin" ? "active-menu" : ""}>
-                <Link to="/SuperAdmin/AddSubCategoryAdmin">Add Subcategory</Link>
-              </li>
+           
             </ul>
           </li>
 
