@@ -42,7 +42,7 @@ import VendorBusiness from './SuperAdmin/VendorBusiness';
 import VendorCategory from './SuperAdmin/VendorCategory';
 import AdminDashboard from './SuperAdmin/AdminDashboard';
 import UpdateSubCategory from './SuperAdmin/UpdateSubcategory';
-
+import UpdateProductSuperAdmin from './SuperAdmin/UpdateProduct';
 import UpdateCategorySuperAdmin from './SuperAdmin/UpdateCategory';
 import AllProductSuperAdmin from './SuperAdmin/AllProduct';
 import AddvendorBulk from './SuperAdmin/AddvendorBulk';
@@ -164,6 +164,7 @@ function App() {
           <Route path="/SuperAdmin/AddSubCategoryAdmin" element={< AddSubCategoryAdmin/>} />
           <Route path='/UpdatesubCategory/:id' element={<UpdateSubCategory/>} />
           <Route path='/UpdateBuyer/:id' element={<UpdateBuyer/>} />
+            <Route path='/SuperAdmin/UpdateProduct/:id' element={<UpdateProductSuperAdmin/>} />
         
           <Route path="/SuperAdmin/ViewVendor/:id" element={< ViewVendor/>} />
           

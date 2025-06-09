@@ -28,7 +28,12 @@ const AllBuilder = () => {
   const handleView = (VendorId) => {
     window.location.href = `/SuperAdmin/ViewBuilderEnquiry/${VendorId}`;
   };
-
+ const handleUpdate = (VendorId) => {
+    window.location.href = `/SuperAdmin/ViewBuilderEnquiry/${VendorId}`;
+  };
+   const handleDelete = (VendorId) => {
+    window.location.href = `/SuperAdmin/ViewBuilderEnquiry/${VendorId}`;
+  };
   const handleApproved = async (id, newStatus) => {
     try {
       const response = await axios.put(
@@ -75,6 +80,8 @@ const AllBuilder = () => {
                 <th>Number</th>
                 <th>Date Added</th>
                <th>View</th>
+               <th>Update</th>
+               <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -98,6 +105,24 @@ const AllBuilder = () => {
                       onClick={() => handleView(vendor._id)}
                     >
                       View
+                    </button>
+                 
+                  </td>
+                    <td>
+                    <button
+                      className="btn btn-warning btn-sm mt-2 mb-2 width-100"
+                      onClick={() => handleUpdate(vendor._id)}
+                    >
+                      Update
+                    </button>
+                 
+                  </td>
+                    <td>
+                    <button
+                      className="btn btn-danger btn-sm mt-2 mb-2 width-100"
+                      onClick={() => handleDelete(vendor._id)}
+                    >
+                      Delete
                     </button>
                  
                   </td>

@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import Sidebar from './sidebar';
+import Sidebar from './Sidebar';
 import './addcategory.css';
 
 const UpdateProductSuperAdmin = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [slug, setSlug] = useState('');
+  const [lookingFor, setlookingFor] = useState('');
+  const [city, setCity] = useState('');
+    const [locality, setlocality] = useState('');
   const [smalldescription, setSmallDescription] = useState('');
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState('');
   const [description, setDescription] = useState('');
   const [active, setActive] = useState(true);
-  const [originalPrice, setOriginalPrice] = useState('');
-  const [sellingPrice, setSellingPrice] = useState('');
+
+  const [bedrooms, setBedrooms] = useState('');
   const [category, setCategory] = useState('');
   const [categories, setCategories] = useState([]);
   const [message, setMessage] = useState('');
@@ -32,14 +33,16 @@ const UpdateProductSuperAdmin = () => {
   
       if (data.status === 'ok') {
         const product = data.data;
-        setName(product.name);
-        setSlug(product.slug);
+        setlookingFor(product.lookingFor);
+         setCategory(product.categoryId);
+        setCity(product.city);
+          setlocality(product.locality);
         setSmallDescription(product.smalldescription);
         setDescription(product.description);
         setActive(product.active);
-        setOriginalPrice(product.originalPrice);
-        setSellingPrice(product.sellingPrice);
-        setCategory(product.category);
+      
+        setBedrooms(product.bedrooms);
+       
         if (product.image) {
           setImagePreview(`${process.env.REACT_APP_API_URL}/${product.image.replace('\\', '/')}`);
         }
@@ -84,14 +87,14 @@ const UpdateProductSuperAdmin = () => {
   
     const formData = new FormData();
     formData.append('_id', id);
-    formData.append('name', name);
-    formData.append('slug', slug);
+    formData.append('lookingFor', lookingFor);
+    formData.append('city', city);
     formData.append('smalldescription', smalldescription);
     if (image) formData.append('image', image);
     formData.append('description', description);
     formData.append('active', active);
-    formData.append('originalPrice', originalPrice);
-    formData.append('sellingPrice', sellingPrice);
+    formData.append('locality', locality);
+    formData.append('bedrooms', bedrooms);
     formData.append('category', category);
   
     try {
@@ -111,10 +114,11 @@ const UpdateProductSuperAdmin = () => {
   };
 
   return (
+       <div>
+    <Sidebar />
     <div className="add-category-container">
-      <Sidebar />
       <div className="add-category-content">
-        <h1 className="page-title">Update Product</h1>
+        <h1 className="page-title">Update Property</h1>
         <form onSubmit={handleSubmit} className="category-form">
           <div className='form-group'>
             <label htmlFor="category">Category</label>
@@ -136,8 +140,8 @@ const UpdateProductSuperAdmin = () => {
                 id='name'
                 placeholder='Product Name'
                 className='form-control'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={lookingFor}
+                onChange={(e) => setlookingFor(e.target.value)}
               />
             </div>
             <div className='form-group col-sm-6 mb-4'>
@@ -147,30 +151,30 @@ const UpdateProductSuperAdmin = () => {
                 id='slug'
                 placeholder='Product Slug'
                 className='form-control'
-                value={slug}
-                onChange={(e) => setSlug(e.target.value)}
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
               />
             </div>
             <div className='form-group col-sm-6 mb-4'>
               <label htmlFor="originalPrice">Original Price</label>
               <input
                 type='text'
-                id='originalPrice'
+                id='locality'
                 placeholder='Original Price'
                 className='form-control'
-                value={originalPrice}
-                onChange={(e) => setOriginalPrice(e.target.value)}
+                value={locality}
+                onChange={(e) => setlocality(e.target.value)}
               />
             </div>
             <div className='form-group col-sm-6 mb-4'>
               <label htmlFor="sellingPrice">Selling Price</label>
               <input
                 type='text'
-                id='sellingPrice'
+                id='bedrooms'
                 placeholder='Selling Price'
-                className='form-control'
-                value={sellingPrice}
-                onChange={(e) => setSellingPrice(e.target.value)}
+  className='form-control'
+                value={bedrooms}
+                onChange={(e) => setBedrooms(e.target.value)}
               />
             </div>
             <div className='form-group mb-4'>
@@ -241,7 +245,7 @@ const UpdateProductSuperAdmin = () => {
           <button type="submit" className="btn submit-btn">Update Product</button>
         </form>
       </div>
-    </div>
+    </div>  </div>
   );
 };
 

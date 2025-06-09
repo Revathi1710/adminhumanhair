@@ -58,6 +58,7 @@ function ViewBuilderEnquiry() {
                   <tr>
                     <th>SI.No</th>
                     <th>Date/Time</th>
+                    <th>Property</th>
                     <th>Customer Name</th>
                     <th>Customer Number</th>
                     <th>Builder Name</th>
@@ -69,6 +70,21 @@ function ViewBuilderEnquiry() {
                     <tr key={enquiry._id}>
                       <td>{startIndex + index + 1}</td>
                       <td>{new Date(enquiry.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</td>
+                      <td style={{textAlign:'left'}}>
+                   <img
+  src={`${process.env.REACT_APP_API_URL}/${enquiry.property_id?.PropertyImages?.[0]}`}
+  width={50}
+  alt="Property"
+/>
+
+
+
+                        {enquiry.property_id.bedrooms}BNK {enquiry.property_id.bathrooms} Bath  <br/>
+                        Address:{enquiry.property_id.locality}<br/>
+                        city:{enquiry.property_id.city}
+                        
+                        </td>
+                      
                       <td>{enquiry.customername}</td>
                       <td>{enquiry.customerIdNumber}</td>
                       <td>{enquiry.ownerName || 'No Vendor'}</td>
